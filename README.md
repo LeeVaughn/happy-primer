@@ -12,7 +12,7 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 * The main page gives the user the option of viewing cute pictures, funny gifs, or motivational quotes
 * The Flickr API is used to display pictures from various categories
-* The Giphy API is used to display gifs from various categories
+* The GIPHY API is used to display gifs from various categories
 * A MongoDB database is used to return the various motivational quotes
 * The user can search for specific categories of pictures and gifs.
 
@@ -25,6 +25,11 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://github.com/LeeVaughn/twitter-interface)
 * [MongoDB](https://www.mongodb.com/)
+
+## APIs
+
+* [Flickr](https://www.flickr.com/services/api/)
+* [GIPHY](https://developers.giphy.com/)
 
 ## Dependencies
 
