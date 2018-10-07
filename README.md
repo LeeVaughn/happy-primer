@@ -24,6 +24,7 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://github.com/LeeVaughn/twitter-interface)
+* [Bootstrap 4](https://getbootstrap.com/)
 * [MongoDB](https://www.mongodb.com/)
 
 ## APIs
