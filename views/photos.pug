@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container.text-sm-center
+    .row.justify-content-center
+      a.btn.btn-outline-light.btn-lg.bg-warning(href="/puppies") Puppies
+      a.btn.btn-outline-light.btn-lg.bg-warning(href="/pandas") Pandas
+      a.btn.btn-outline-light.btn-lg.bg-warning(href="/kittens") Kittens
+    .d-flex.justify-content-center
+      .input-group.col-6.mb-3
+        input.form-control(type="text", placeholder="Search Photos", aria-label="Search Photos", aria-describedby="basic-addon2")
+        .input-group-append
+          button.btn.btn-warning.text-light(type="button") Search
+    h1.display-3 Cute Pictures
