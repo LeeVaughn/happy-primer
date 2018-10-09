@@ -1,5 +1,15 @@
 const express = require("express");
+const axios = require("axios");
 const router = express.Router();
+
+// GIPHY API call
+const getGifs = axios.get("http://api.giphy.com/v1/gifs/trending?api_key=RfkIjBEloXXrKNYJIjqijXyuXJJYFDUx")
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 // GET home route
 router.get("/", function(req, res, next) {
