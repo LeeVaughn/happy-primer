@@ -10,11 +10,16 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 ## Features
 
-* The main page gives the user the option of viewing cute pictures, funny gifs, or motivational quotes
-* The Flickr API is used to display pictures from various categories
-* The GIPHY API is used to display gifs from various categories
+* The main page gives the user the option of viewing cute photos, funny gifs, or inspiring quotes
+* The Flickr API is used to display photos
+* The GIPHY API is used to display gifs
 * A MongoDB database is used to return the various motivational quotes
-* The user can search for specific categories of pictures and gifs.
+
+## Future Improvements
+
+* Add buttons to give users the option to view different types of photos or gifs
+* Add the option to search for photos or gifts of the user's choice
+* Improve layout on small devices
 
 ## To Run
 
@@ -38,6 +43,7 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 ## Links
 
+* [Website](https://happy-primer.herokuapp.com/)
 * [Repository](https://github.com/LeeVaughn/happy-primer)
 
 ## Author
