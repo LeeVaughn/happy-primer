@@ -5,13 +5,18 @@ block content
   include navbar
   
   .container.text-sm-center
-    .row.justify-content-center
-      a.btn.btn-outline-light.btn-lg.bg-warning(href="/puppies") Puppies
-      a.btn.btn-outline-light.btn-lg.bg-warning(href="/pandas") Pandas
-      a.btn.btn-outline-light.btn-lg.bg-warning(href="/kittens") Kittens
-    .d-flex.justify-content-center
-      .input-group.col-6.mb-3
-        input.form-control(type="text", placeholder="Search Photos", aria-label="Search Photos", aria-describedby="basic-addon2")
-        .input-group-append
-          button.btn.btn-warning.text-light(type="button") Search
-    h1.display-3 Cute Pictures
+    //- .row.justify-content-center
+    //-   a.btn.btn-outline-light.btn-lg.bg-warning(href="/puppies") Puppies
+    //-   a.btn.btn-outline-light.btn-lg.bg-warning(href="/pandas") Pandas
+    //-   a.btn.btn-outline-light.btn-lg.bg-warning(href="/kittens") Kittens
+    //- .d-flex.justify-content-center
+    //-   .input-group.col-6.mb-3
+    //-     input.form-control(type="text", placeholder="Search Photos", aria-label="Search Photos", aria-describedby="basic-addon2")
+    //-     .input-group-append
+    //-       button.btn.btn-warning.text-light(type="button") Search
+    h1.display-3 Photos of Dogs Surfing
+    .row
+      each photo in photos
+        .col-lg-3.col-md-4.col-sm-6
+          .d-block.mb-4.h-100
+            img.img-fluid.img-thumbnail(src=""+photo.url+"")
