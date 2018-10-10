@@ -2,10 +2,11 @@ extends layout
 
 block content
   .main.container.text-sm-center
-    h1.display-3= title
+    h1.display-3.mb-5= title
     p.lead Positive emotion, or "happiness", has been proven to improve performance.
-    p.lead Research has shown that when we are positive, our brains become more engaged, creative, motivated, energetic, resilient, and productive.
-    h3 What makes you happy?
+    p.lead Research has shown that when we are happy, our brains become more engaged, more creative, and more productive.
+    p.lead.mb-5 The Happiness Primer is here to deliver that extra boost of happiness whenever you need it.
+    h3.mb-3 What makes you happy?
     .row
       .card-deck
         .card.bg-outline-dark
@@ -17,6 +18,6 @@ block content
           .card-body.bg-warning
             a.btn.btn-outline-light.btn-lg(href="/gifs") Funny Gifs
         .card
-          img.card-img-top(src="http://placeimg.com/640/480/tech", alt="image of dog")
+          img.card-img-top(src="/images/sandcastle.jpg", alt="image of dog")
           .card-body.bg-warning
-            a.btn.btn-outline-light.btn-lg(href="/quotes") Motivational Qoutes
+            a.btn.btn-outline-light.btn-lg(href="/quotes") Inspiring Qoutes
