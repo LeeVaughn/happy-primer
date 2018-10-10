@@ -8,3 +8,7 @@ body {
 a {
   color: #FFF;
 }
+
+.btn {
+  white-space: normal;
+}
