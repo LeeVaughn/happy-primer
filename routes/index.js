@@ -6,6 +6,7 @@ const giphyAPI = require("../.giphyConfig.js");
 const limit = 20;
 let gifs = [];
 let photos = [];
+const Quote = require("../models/quote");
 
 // Flickr API call
 axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${flickrAPI}&tags=dogs+surfing&in_gallery=&per_page=${limit}&format=json&nojsoncallback=1`)
@@ -66,6 +67,20 @@ router.get("/gifs", function(req, res, next) {
 // GET quotes route
 router.get("/quotes", function(req, res, next) {
   res.render("quotes");
+});
+
+// POST quotes route
+router.post("/quotes", (req, res, next) => {
+  const quote = new Quote(req.body);
+
+  quote.save((err, quote) => {
+    if (err) {
+      next(err);
+    }
+    res.status(201);
+    res.location("/");
+    res.send();
+  });
 });
 
 module.exports = router;
