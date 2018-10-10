@@ -5,5 +5,8 @@ block content
   include navbar
 
   .container.text-sm-center
-    h1.display-3 "Do or do not. There is no try."
-    h2 - Yoda
+    h1.display-3 #{quotation}
+    .text-sm-right
+      h2 - #{source}
+    .justify-content-center
+      a.btn.btn-outline-light.btn-lg.bg-warning(href="/quotes") New Quote
