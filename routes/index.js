@@ -23,7 +23,6 @@ axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api
 
       const photo = {
         "url": `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
-        // https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_[mstzb].jpg
       }
       photos.push(photo);
     }
@@ -66,7 +65,96 @@ router.get("/gifs", function(req, res, next) {
 
 // GET quotes route
 router.get("/quotes", function(req, res, next) {
-  res.render("quotes");
+  // creates random number based on number of documents in the Quotes database
+  const index = Math.floor(Math.random() * 20);
+
+   // returns all quotes
+  Quote.find()
+    .exec(function (err, quote) {
+      if (err) {
+        next(err);
+      } else {
+        // uses random number created above to select a quote and assign its properties to variables
+        const quotation = quote[index].quote
+        const source = quote[index].source
+
+        res.render("quotes", { quotation, source });
+      }
+    });
+
+  // let length;
+  // let index;
+
+  // // returns random quote the first time but undefined after that
+  // Quote.countDocuments()
+  //   .exec(function (err, count) {
+  //     if (err) {
+  //       next(err);
+  //     } else {
+  //       length = count - 1;
+  //       index = Math.floor(Math.random() * length);
+  //       console.log(length, index);
+  //       // res.render("quotes");
+  //     }
+  //   });
+
+  // Quote.find()
+  //   .exec(function (err, quote) {
+  //     if (err) {
+  //       next(err);
+  //     } else {
+  //       console.log(index);
+  //       console.log(quote[index]);
+  //       res.render("quotes");
+  //     }
+  //   });
+
+  // // calculates number of quotes in database
+  // Quote.countDocuments()
+  // .exec(function (err, count) {
+  //   if (err) {
+  //     next(err);
+  //   } else {
+  //     length = count - 1;
+  //     console.log(length);
+  //     // res.render("quotes");
+  //   }
+  // });
+
+  // index = Math.floor(Math.random() * 20);
+
+  // Quote.find()
+  //   .exec(function (err, quote) {
+  //     if (err) {
+  //       next(err);
+  //     } else {
+  //       console.log(index);
+  //       console.log(quote[index]);
+  //       res.render("quotes");
+  //     }
+  //   });
+
+  // // returns all quotes
+  // Quote.find()
+  //   .exec(function (err, quote) {
+  //     if (err) {
+  //       next(err);
+  //     } else {
+  //       console.log(quote[0]);
+  //       res.render("quotes");
+  //     }
+  //   });
+
+  // // returns a quote but it seems to always be the first one
+  // Quote.findOne()
+  //   .exec(function (err, quote) {
+  //     if (err) {
+  //       next(err);
+  //     } else {
+  //       console.log(quote.quote)
+  //       res.render("quotes");
+  //     }
+  //   });
 });
 
 // POST quotes route
