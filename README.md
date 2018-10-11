@@ -23,12 +23,26 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 ## To Run
 
-* Instructions coming soon...
+* Download project files by running ```git clone https://github.com/LeeVaughn/happy-primer```
+* Navigate to the project folder
+* Install dependencies with ```npm install```
+* You will need to create your own .flickrCongif.js and .giphyConfig.js files for your API codes using this format:
+
+``` javascript
+const api_key = "...";
+
+module.exports = api_key;
+```
+
+* These files should be saved in the root directory along with app.js
+* You will also need to create a new MongoDB database named "quotes" and seed it with data from the seed-data directory
+* Type ```npm start``` or ```node ./bin/www``` to run application (application runs on localhost:3000)
 
 ## Built With
 
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://github.com/LeeVaughn/twitter-interface)
+* [Pug](https://pugjs.org/api/getting-started.html)
 * [Bootstrap 4](https://getbootstrap.com/)
 * [MongoDB](https://www.mongodb.com/)
 
@@ -39,7 +53,11 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 ## Dependencies
 
-* Coming soon...
+* [axios](https://www.npmjs.com/package/axios) Promise based HTTP client for the browser and Node.js
+* [body-parser](https://www.npmjs.com/package/body-parser) Node.js body parsing middleware
+* [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+* [mongoose](https://www.npmjs.com/package/mongoose) elegant MongoDB object modeling for Node.js
+* [morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for Node.js
 
 ## Links
 
