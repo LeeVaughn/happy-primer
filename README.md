@@ -19,7 +19,6 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 
 * Add buttons to give users the option to view different types of photos or gifs
 * Add the option to search for photos or gifts of the user's choice
-* Improve layout on small devices
 
 ## To Run
 
