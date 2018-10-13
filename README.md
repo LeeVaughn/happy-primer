@@ -1,4 +1,4 @@
-# The Happiness Primer (aka Happy Primer) (Work in Progress)
+# The Happiness Primer (aka Happy Primer)
 
 Positive emotion, or "happiness", has been proven to fuel performance. The Happiness Primer is intended to provide a quick
 dose of positive emotion whenever you need it. This idea is based on the principles of Positive Psychology as described
