@@ -1,7 +1,9 @@
 nav.navbar.navbar-expand-sm.fixed-top.navbar-dark.bg-warning
   .container
     a.navbar-brand(href="/") The Happiness Primer
-    div.collapse.navbar-collapse#navbarSupportedContent
+    button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarCollapse")
+      span.navbar-toggler-icon
+    div.collapse.navbar-collapse#navbarCollapse
       .navbar-nav.ml-auto
           a.nav-link.active(href="photos") Cute Photos
           a.nav-link.active(href="gifs") Funny Gifs
