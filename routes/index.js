@@ -55,18 +55,18 @@ router.get("/", (req, res, next) => {
 
 // GET photos route
 router.get("/photos", (req, res, next) => {
-  res.render("photos", { photos });
+  res.render("photos", { title: "Cute Photos", photos });
 });
 
 // GET gifs route
 router.get("/gifs", (req, res, next) => {
-  res.render("gifs", { gifs });
+  res.render("gifs", { title: "Funny Gifs", gifs });
 });
 
 // GET quotes route
 router.get("/quotes", (req, res, next) => {
   // creates random number based on number of documents in the Quotes database
-  const index = Math.floor(Math.random() * 20);
+  const index = Math.floor(Math.random() * 20) + 1;
 
    // returns all quotes
   Quote.find()
@@ -78,7 +78,7 @@ router.get("/quotes", (req, res, next) => {
         const quotation = quote[index].quote
         const source = quote[index].source
 
-        res.render("quotes", { quotation, source });
+        res.render("quotes", { title: "Inspiring Quotes", quotation, source });
       }
     });
 });
