@@ -21,7 +21,6 @@ flickrCall = (query = "dogs surfing") => {
       const server = res.data.photos.photo[i].server;
       const id = res.data.photos.photo[i].id;
       const secret = res.data.photos.photo[i].secret;
-
       const photo = {
         "url": `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
       }
