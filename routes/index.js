@@ -69,7 +69,7 @@ router.get("/gifs", (req, res, next) => {
 // GET quotes route
 router.get("/quotes", (req, res, next) => {
   // creates random number based on number of documents in the Quotes database
-  const index = Math.floor(Math.random() * 23);
+  const index = Math.floor(Math.random() * Quote.count());
 
   // returns all quotes
   Quote.find()
