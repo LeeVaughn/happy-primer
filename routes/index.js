@@ -14,6 +14,9 @@ flickrCall = (query = "dogs surfing") => {
   .then(function (res) {
     console.log("Flickr API call successful");
 
+    // reset photos to empty array
+    photos = [];
+
     // loops over response data to create an array of urls for the individual photos
     for (let i = 0; i < limit; i++) {
       // variables used to construct url string for each photo
@@ -59,6 +62,15 @@ router.get("/", (req, res, next) => {
 // GET photos route
 router.get("/photos", (req, res, next) => {
   res.render("photos", { title: "Cute Photos", photos });
+});
+
+// GET photos search route
+router.get("/photos/search", (req, res, next) => {
+  console.log("clicked");
+  const query = (req.query.query);
+
+  flickrCall(query);
+  res.render("photos", { title: "${query} Photos", photos });
 });
 
 // GET gifs route

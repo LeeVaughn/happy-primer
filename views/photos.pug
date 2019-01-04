@@ -16,10 +16,11 @@ block content
     //-       button.btn.btn-warning.text-light(type="button") Search
     h1.display-3.my-5 Cute Photos
     .d-flex.justify-content-center
-      .input-group.col-6.mb-3
-        input.form-control(class="flickr-search" type="text", placeholder="Search Photos", aria-label="Search Photos", aria-describedby="basic-addon2")
-        .input-group-append
-          button.btn.btn-warning.text-light(type="button") Search
+      form.col-6.mb-3(action="/photos/search", method="get")
+        .input-group
+          input.form-control(class="flickr-search", name="query", type="search", placeholder="Search Photos...", aria-label="Search Photos", aria-describedby="basic-addon2")
+          .input-group-append
+            button.btn.btn-warning.text-light(type="submit") Search
     .row
       each photo in photos
         .col-lg-3.col-md-4.col-sm-6
