@@ -10,12 +10,10 @@ const Quote = require("../models/quote");
 
 // Flickr API call
 flickrCall = (query = "dogs surfing") => {
+  photos.length = 0;
   axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${flickrAPI}&tags=${query}&in_gallery=&per_page=${limit}&format=json&nojsoncallback=1`)
   .then(function (res) {
     console.log("Flickr API call successful");
-
-    // reset photos to empty array
-    photos = [];
 
     // loops over response data to create an array of urls for the individual photos
     for (let i = 0; i < limit; i++) {
@@ -27,6 +25,7 @@ flickrCall = (query = "dogs surfing") => {
       const photo = {
         "url": `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
       }
+
       photos.push(photo);
     }
   })
@@ -46,6 +45,7 @@ giphyCall = (query = "cute animals") => {
       const gif = {
         "url": res.data.data[i].images.downsized.url
       }
+
       gifs.push(gif);
     }
   })
@@ -66,11 +66,11 @@ router.get("/photos", (req, res, next) => {
 
 // GET photos search route
 router.get("/photos/search", (req, res, next) => {
-  console.log("clicked");
   const query = (req.query.query);
 
-  flickrCall(query);
-  res.render("photos", { title: "${query} Photos", photos });
+  flickrCall(query)
+
+  res.render("photos", { title: "Cute Photos", photos })
 });
 
 // GET gifs route
