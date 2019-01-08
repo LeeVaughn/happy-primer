@@ -7,10 +7,11 @@ block content
   .container.text-center
     h1.display-3.my-5 Funny Gifs
     .d-flex.justify-content-center
-      .input-group.col-6.mb-3
-        input.form-control(class="giphy-search" type="text", placeholder="Search Photos", aria-label="Search Photos", aria-describedby="basic-addon2")
-        .input-group-append
-          button.btn.btn-warning.text-light(type="button") Search
+      form.col-6.mb-3(action="/gifs/search", method="get")
+        .input-group
+          input.form-control(class="giphy-search", name="query", type="search", placeholder="Search Gifs...", aria-label="Search Gifs", aria-describedby="basic-addon2")
+          .input-group-append
+            button.btn.btn-warning.text-light(type="submit") Search
     .row
       each gif in gifs
         .col-lg-3.col-md-4.col-sm-6
