@@ -84,7 +84,7 @@ router.get("/gifs", (req, res, next) => {
 });
 
 // GET gifs search route
-router.get("/photos/search", (req, res, next) => {
+router.get("/gifs/search", (req, res, next) => {
   const query = (req.query.query);
 
   giphyCall(query);
