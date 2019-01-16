@@ -69,7 +69,7 @@ router.get("/photos", (req, res, next) => {
   flickrCall(query);
   setTimeout(function() {
     res.render("photos", { title: "Cute Photos", photos });
-  }, 500);
+  }, 800);
 });
 
 // GET gifs route
@@ -79,7 +79,7 @@ router.get("/gifs", (req, res, next) => {
   giphyCall(query);
   setTimeout(function() {
     res.render("gifs", { title: "Funny Gifs", gifs });
-  }, 500);
+  }, 800);
 });
 
 // GET quotes route
