@@ -5,10 +5,10 @@ block content
   include navbar-gifs
   
   .container.text-center
-    h1.display-3.my-5 Funny Gifs
+    h1.display-3.mt-5.mb-4 Funny Gifs
     .d-flex.justify-content-center
       form.col-6.mb-3(action="/gifs", method="get")
-        .input-group
+        .input-group.mb-4
           input.form-control(class="giphy-search", name="query", type="search", placeholder="Search Gifs...", aria-label="Search Gifs", aria-describedby="basic-addon2")
           .input-group-append
             button.btn.btn-warning.text-light(type="submit") Search
