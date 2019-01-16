@@ -11,14 +11,15 @@ This project was created as a part of the Treehouse Full Stack JavaScript Techde
 ## Features
 
 * The main page gives the user the option of viewing cute photos, funny gifs, or inspiring quotes
+* The user can also search for specific categories of photos or gifs
 * The Flickr API is used to display photos
 * The GIPHY API is used to display gifs
 * A MongoDB database is used to return the various motivational quotes
 
 ## Future Improvements
 
-* Add buttons to give users the option to view different types of photos or gifs
-* Add the option to search for photos or gifts of the user's choice
+* Improve layout on smaller devices
+* Add functionality to prevent repeated quotes
 
 ## To Run
 
