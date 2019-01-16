@@ -27,7 +27,6 @@ flickrCall = (query = "dogs surfing") => {
       const photo = {
         "url": `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`
       }
-
       photos.push(photo);
     }
   })
@@ -50,7 +49,6 @@ giphyCall = (query = "cute animals") => {
       const gif = {
         "url": res.data.data[i].images.downsized.url
       }
-
       gifs.push(gif);
     }
   })
@@ -66,30 +64,22 @@ router.get("/", (req, res, next) => {
 
 // GET photos route
 router.get("/photos", (req, res, next) => {
-  res.render("photos", { title: "Cute Photos", photos });
-});
-
-// GET photos search route
-router.get("/photos/search", (req, res, next) => {
   const query = (req.query.query);
 
   flickrCall(query);
-
-  res.render("photos", { title: "Cute Photos", photos });
+  setTimeout(function() {
+    res.render("photos", { title: "Cute Photos", photos });
+  }, 500);
 });
 
 // GET gifs route
 router.get("/gifs", (req, res, next) => {
-  res.render("gifs", { title: "Funny Gifs", gifs });
-});
-
-// GET gifs search route
-router.get("/gifs/search", (req, res, next) => {
   const query = (req.query.query);
 
   giphyCall(query);
-
-  res.render("gifs", { title: "Funny Gifs", gifs });
+  setTimeout(function() {
+    res.render("gifs", { title: "Funny Gifs", gifs });
+  }, 500);
 });
 
 // GET quotes route
