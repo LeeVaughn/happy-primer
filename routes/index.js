@@ -92,7 +92,6 @@ router.get("/quotes", (req, res, next) => {
       } else {
         // creates random number based on number of documents in the Quotes database
         const index = Math.floor(Math.random() * quote.length);
-
         // uses random number created above to select a quote and assign its properties to variables
         const quotation = quote[index].quote
         const source = quote[index].source
