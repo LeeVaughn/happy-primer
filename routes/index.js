@@ -30,8 +30,8 @@ flickrCall = (query = "dogs surfing") => {
       photos.push(photo);
     }
   })
-  .catch(function (err) {
-    console.log("Error with Flickr API");
+  .catch(function () {
+    console.error("Error with Flickr API");
   });
 }
 
@@ -52,18 +52,18 @@ giphyCall = (query = "cute animals") => {
       gifs.push(gif);
     }
   })
-  .catch(function (err) {
-    console.log("Error with GIPHY API");
+  .catch(function () {
+    console.error("Error with GIPHY API");
   });
 }
 
 // GET home route
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
   res.render("index", { title: "The Happiness Primer" });
 });
 
 // GET photos route
-router.get("/photos", (req, res, next) => {
+router.get("/photos", (req, res) => {
   const query = (req.query.query);
 
   flickrCall(query);
@@ -73,7 +73,7 @@ router.get("/photos", (req, res, next) => {
 });
 
 // GET gifs route
-router.get("/gifs", (req, res, next) => {
+router.get("/gifs", (req, res) => {
   const query = (req.query.query);
 
   giphyCall(query);
@@ -83,7 +83,7 @@ router.get("/gifs", (req, res, next) => {
 });
 
 // GET quotes route
-router.get("/quotes", (req, res, next) => {
+router.get("/quotes", (req, res) => {
   // returns all quotes
   Quote.find()
     .exec( (err, quote) => {
