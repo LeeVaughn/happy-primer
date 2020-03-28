@@ -57,10 +57,22 @@ giphyCall = (query = "cute animals") => {
   });
 }
 
+// handler function to wrap each route
+function asyncHandler(cb) {
+  return async(req, res, next) => {
+    try {
+      await cb(req, res, next)
+    } catch (error) {
+      console.log(error)
+      res.status(500).send(error);
+    }
+  }
+}
+
 // GET home route
-router.get("/", (req, res) => {
+router.get("/", asyncHandler(async (req, res) => {
   res.render("index", { title: "The Happiness Primer" });
-});
+}));
 
 // GET photos route
 router.get("/photos", (req, res) => {
