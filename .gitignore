@@ -2,8 +2,8 @@
 /node_modules
 
 # API credentials
-# /.giphyConfig.js
-# /.flickrConfig.js
+/.giphyConfig.js
+/.flickrConfig.js
 
 # misc
 .DS_Store
