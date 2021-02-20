@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // connects to mongoDB
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/quotes", { useNewUrlParser: true });
 const db = mongoose.connection;
 
 // mongo error
